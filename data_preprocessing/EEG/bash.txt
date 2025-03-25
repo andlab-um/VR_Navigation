@@ -1,0 +1,12 @@
+#Preprocessing procedure，you need to keep the Test_crop.py and Rest_state_Crop.py for post and previous code to call on it
+python mne_processing_template.py #Preliminary filtering and re-referencing, resample, generated files moved to Preprocessed_Data_FIF
+
+python preprocess_crop.py #The generated fif is cut item by item, removing flat segments.
+
+python EEG_Data_Crop.py #Multiple decentralised ff for the first round of classification.Splitting by stage
+
+python Merge ANA.py #Merge the same subject information for each crop segment.
+
+python Rest_State_Crop.py#Resting-state data processing
+
+python ASR+ICA_Preprocessing.py#Task state data processing
